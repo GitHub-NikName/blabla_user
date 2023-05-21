@@ -8,7 +8,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./quiz:/opt/project
+      - ./blabla_user:/app
     ports:
       - "8000:8000"
     env_file:
@@ -18,10 +18,10 @@ services:
     image: postgres:15.3-alpine3.18
     container_name: blabla_user_db
     ports:
-      - 5432:5432
+      - "5432:5432"
     restart: always
     volumes:
-      - quiz-db:/var/lib/postgresql/data
+      - blabla_user_db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
