@@ -8,7 +8,7 @@ from .serializers import SignupSerializer, RecordSerializer
 
 
 class Signup(CreateAPIView):
-    """Создает пользователя."""
+    """Создание пользователя."""
     queryset = User.objects.all()
     serializer_class = SignupSerializer
 
