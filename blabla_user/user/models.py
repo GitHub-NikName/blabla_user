@@ -1,4 +1,5 @@
 import uuid
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -10,7 +11,6 @@ class User(AbstractUser):
         unique=True,
         editable=False
     )
-    # token = models.CharField('token', max_length=150)
 
     class Meta:
         verbose_name = 'Пользователь'
@@ -31,7 +31,7 @@ class Audio(models.Model):
         default=uuid.uuid4,
         unique=True
     )
-    audio = models.BinaryField('mp3_audio')
+    file = models.FileField('mp3_audio', upload_to='records/')
 
     class Meta:
         verbose_name = 'Аудиозапись'

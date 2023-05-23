@@ -1,10 +1,10 @@
 from django.urls import path
 
-from .views import signup
+from .views import Signup, Record
 
 app_name = 'api'
 
 urlpatterns = [
-    path('', signup),
-    path('record/')
+    path('', Signup.as_view()),
+    path('record/', Record.as_view(), name='record'),
 ]
